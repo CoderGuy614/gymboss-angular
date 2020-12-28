@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -17,12 +18,21 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, DashboardComponent, LoginComponent, CustomersComponent, CustomerComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    DashboardComponent,
+    LoginComponent,
+    CustomersComponent,
+    CustomerComponent,
+    HomeComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FlashMessagesModule.forRoot(),
     FormsModule,
+    StoreModule.forRoot({}),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
   ],
